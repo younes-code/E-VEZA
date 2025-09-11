@@ -1,0 +1,10 @@
+torch
+torchvision
+torchaudio
+tonic
+h5py
+opencv-python
+transformers
+sentencepiece
+matplotlib
+tqdm
