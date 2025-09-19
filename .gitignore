@@ -1,0 +1,9 @@
+# Ignore datasets
+data/
+*.mp4
+*.npz
+plots/
+*.png
+active_rgb_windows/
+
+
