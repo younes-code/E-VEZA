@@ -1,9 +1,22 @@
-# Ignore datasets
-data/
+# Ignore video and image files in all folders
 *.mp4
 *.npz
-plots/
 *.png
-active_rgb_windows/
 
+# Ignore video and image files in subfolders
+data/**/*.mp4
+data/**/*.npz
+data/**/*.png
 
+plots/**/*.mp4
+plots/**/*.npz
+plots/**/*.png
+
+active_rgb_windows/**/*.mp4
+active_rgb_windows/**/*.npz
+active_rgb_windows/**/*.png
+
+# Do NOT ignore the folders themselves
+!data/
+!plots/
+!active_rgb_windows/
