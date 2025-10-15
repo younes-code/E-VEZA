@@ -101,7 +101,7 @@ def evaluate(npz_dir, annotation_txt, visualize=False):
     npz_files = glob(os.path.join(npz_dir, "*.npz"))
     if not npz_files:
         print(f"[ERROR] No NPZ files found in {npz_dir}")
-        return
+        return 0, 0  # Return dummy values
 
     total_videos, total_success = 0, 0
     total_coverage, results = 0, []
@@ -124,7 +124,7 @@ def evaluate(npz_dir, annotation_txt, visualize=False):
         results.append((video_name, result, coverage_ratio * 100))
         print(f"[RESULT] {video_name}: {result} | Active coverage = {coverage_ratio*100:.2f}%")
 
-    # Summary
+    # Summary for this class
     print("\n=== Summary ===")
     print("Video\tResult\tCoverage (%)")
     for v, r, c in results:
@@ -137,10 +137,35 @@ def evaluate(npz_dir, annotation_txt, visualize=False):
     print(f"[INFO] Average video coverage (frames kept): {avg_cov:.1f}%")
     print(f"[INFO] Estimated optimization (frames skipped): {100 - avg_cov:.1f}%")
 
+    return overall_acc, avg_cov  # Return per-class stats
 
 
 # -------------------------
 if __name__ == "__main__":
-    npz_dir = "data/UCF-Crime-DVS/RoadAccidents"
+    base_dir = "data/UCF-Crime-DVS"
     annotation_txt = "data/uca_annotations/UCFCrime_Train.txt"
-    evaluate(npz_dir, annotation_txt, visualize=False)
+
+    class_dirs = [d for d in glob(os.path.join(base_dir, "*")) if os.path.isdir(d)]
+
+    global_acc_list, global_cov_list = [], []
+
+    for class_dir in class_dirs:
+        class_name = os.path.basename(class_dir)
+        print(f"\n===============================")
+        print(f"[INFO] Running evaluation for class: {class_name}")
+        print(f"===============================")
+
+        acc, cov = evaluate(class_dir, annotation_txt, visualize=False)
+        global_acc_list.append(acc)
+        global_cov_list.append(cov)
+
+    # ---- Global summary ----
+    if global_acc_list:
+        overall_acc = np.mean(global_acc_list)
+        overall_cov = np.mean(global_cov_list)
+        print("\n#################################")
+        print("######## GLOBAL SUMMARY #########")
+        print("#################################")
+        print(f"[INFO] Mean accuracy across classes: {overall_acc:.2f}%")
+        print(f"[INFO] Mean coverage across classes: {overall_cov:.2f}%")
+        print(f"[INFO] Mean optimization (frames skipped): {100 - overall_cov:.2f}%")
