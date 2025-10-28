@@ -194,6 +194,7 @@ def evaluate_class(class_dir, annotations, output_root, visualize=False):
         "videos": total_videos,
     }
 
+    return overall_acc, avg_cov  # Return per-class stats
 
 def evaluate_all(base_dir, annotation_txt, output_root="class_results", visualize=False):
     """Run evaluation on all class folders and save global summary."""

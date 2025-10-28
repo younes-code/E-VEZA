@@ -1,6 +1,6 @@
 Class,Accuracy (%),Coverage (%),Optimization (%),Videos
-RoadAccidents,70.67,19.88,80.12,150
-Robbery,54.97,19.27,80.73,151
+RoadAccidents,70.67,20.0,80.0,150
+Robbery,54.97,19.34,80.66,151
 Shooting,62.0,21.16,78.84,50
-Shoplifting,52.83,16.38,83.62,53
+Shoplifting,52.83,16.56,83.44,53
 Stealing,77.65,22.36,77.64,85
