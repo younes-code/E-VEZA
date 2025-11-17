@@ -4,6 +4,9 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 from glob import glob
+import time
+import zipfile
+from tqdm import tqdm  # Progress bars
 
 
 # -------------------------
@@ -36,14 +39,10 @@ def load_annotations(txt_path):
 # -------------------------
 # Core detection logic
 # -------------------------
-import time
-import zipfile
-
 def detect_active_windows(npz_path, visualize=False, timeout=10):
     """Detect active temporal windows from DVS event timestamps."""
     start_time = time.time()
     try:
-        # Safety: skip corrupted or non-zip files
         if not zipfile.is_zipfile(npz_path):
             raise zipfile.BadZipFile("Not a valid npz file")
 
@@ -56,7 +55,6 @@ def detect_active_windows(npz_path, visualize=False, timeout=10):
         t = data["t"] / 1e6  # convert µs → seconds
         counts, bin_edges = np.histogram(t, bins=200)
 
-        # Adaptive threshold (Median + 2×MAD)
         median_val = np.median(counts)
         mad = np.median(np.abs(counts - median_val))
         threshold = median_val + 2 * mad
@@ -103,12 +101,10 @@ def detect_active_windows(npz_path, visualize=False, timeout=10):
         return active_windows, coverage_ratio, total_duration
 
     except Exception as e:
-        # Log bad files
         with open("bad_files.log", "a") as logf:
             logf.write(f"{npz_path}: {e}\n")
         print(f"[SKIP] {npz_path} ({e})")
         return [], 0, 0
-
 
 
 # -------------------------
@@ -123,7 +119,7 @@ def check_overlap(active_windows, annotated_windows):
 
 
 def evaluate_class(class_dir, annotations, output_root, visualize=False):
-    """Run evaluation for one class folder."""
+    """Run evaluation for one class folder with progress display."""
     class_name = os.path.basename(class_dir)
     npz_files = [
         f for f in glob(os.path.join(class_dir, "*.npz"))
@@ -131,13 +127,14 @@ def evaluate_class(class_dir, annotations, output_root, visualize=False):
     ]
     if not npz_files:
         print(f"[WARNING] No NPZ files found in {class_dir}")
-
         return None
 
     total_videos, total_success, total_coverage = 0, 0, 0
     results = []
 
-    for npz_path in npz_files:
+    print(f"[INFO] Processing class '{class_name}' ({len(npz_files)} videos)...")
+
+    for npz_path in tqdm(npz_files, desc=f"{class_name}", unit="video"):
         video_name = os.path.splitext(os.path.basename(npz_path))[0]
         active_windows, coverage_ratio, total_duration = detect_active_windows(npz_path, visualize)
 
@@ -194,17 +191,16 @@ def evaluate_class(class_dir, annotations, output_root, visualize=False):
         "videos": total_videos,
     }
 
-    return overall_acc, avg_cov  # Return per-class stats
 
 def evaluate_all(base_dir, annotation_txt, output_root="class_results", visualize=False):
-    """Run evaluation on all class folders and save global summary."""
+    """Run evaluation on all class folders and show progress in terminal."""
     annotations = load_annotations(annotation_txt)
     class_dirs = [d for d in glob(os.path.join(base_dir, "*")) if os.path.isdir(d)]
     print(f"[INFO] Found {len(class_dirs)} class folders.")
 
     global_summary = []
 
-    for class_dir in class_dirs:
+    for class_dir in tqdm(class_dirs, desc="Classes", unit="class"):
         summary = evaluate_class(class_dir, annotations, output_root, visualize)
         if summary:
             global_summary.append(summary)
@@ -218,7 +214,8 @@ def evaluate_all(base_dir, annotation_txt, output_root="class_results", visualiz
             writer.writerow([s["class"], round(s["accuracy"], 2), round(s["coverage"], 2), round(s["optimization"], 2), s["videos"]])
 
     print(f"\n[INFO] Global summary saved to: {global_csv}")
-    
+
+
 if __name__ == "__main__":
     base_dir = "data/UCF-Crime-DVS"
     annotation_txt = "data/uca_annotations/UCFCrime_Train.txt"
