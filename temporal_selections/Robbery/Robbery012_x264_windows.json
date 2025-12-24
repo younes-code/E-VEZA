@@ -1,0 +1,29 @@
+{
+  "video_name": "Robbery012_x264",
+  "npz_path": "data/UCF-Crime-DVS/Robbery/Robbery012_x264.npz",
+  "active_windows": [
+    [
+      8.99881573,
+      9.849302745000001
+    ],
+    [
+      9.970800890000001,
+      12.88675637
+    ],
+    [
+      18.718667330000002,
+      19.69065249
+    ],
+    [
+      20.17664507,
+      21.270128375000002
+    ],
+    [
+      23.57859313,
+      24.307582
+    ]
+  ],
+  "coverage_percent": 27.0,
+  "total_duration_sec": 24.3,
+  "evaluation_success": true
+}

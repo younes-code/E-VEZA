@@ -1,0 +1,21 @@
+{
+  "video_name": "RoadAccidents099_x264",
+  "npz_path": "data/UCF-Crime-DVS/RoadAccidents/RoadAccidents099_x264.npz",
+  "active_windows": [
+    [
+      0.004304,
+      1.0788979
+    ],
+    [
+      1.50873546,
+      4.7325171600000004
+    ],
+    [
+      42.77314122,
+      42.98806
+    ]
+  ],
+  "coverage_percent": 10.5,
+  "total_duration_sec": 42.98,
+  "evaluation_success": true
+}

@@ -1,0 +1,25 @@
+{
+  "video_name": "Fighting006_x264",
+  "npz_path": "data/UCF-Crime-DVS/Fighting/Fighting006_x264.npz",
+  "active_windows": [
+    [
+      7.03079032,
+      7.488797080000001
+    ],
+    [
+      20.77099312,
+      23.36636476
+    ],
+    [
+      24.12970936,
+      24.28237828
+    ],
+    [
+      27.94643236,
+      29.473121560000003
+    ]
+  ],
+  "coverage_percent": 15.5,
+  "total_duration_sec": 30.53,
+  "evaluation_success": true
+}

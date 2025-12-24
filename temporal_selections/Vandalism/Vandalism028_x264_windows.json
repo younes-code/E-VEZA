@@ -1,0 +1,25 @@
+{
+  "video_name": "Vandalism028_x264",
+  "npz_path": "data/UCF-Crime-DVS/Vandalism/Vandalism028_x264.npz",
+  "active_windows": [
+    [
+      0.006435,
+      2.9893807800000003
+    ],
+    [
+      52.953722595,
+      65.63124216
+    ],
+    [
+      75.325815945,
+      78.308761725
+    ],
+    [
+      79.800234615,
+      95.46069996
+    ]
+  ],
+  "coverage_percent": 23.0,
+  "total_duration_sec": 149.15,
+  "evaluation_success": true
+}

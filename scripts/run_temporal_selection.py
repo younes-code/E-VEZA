@@ -44,6 +44,25 @@ def load_annotations(txt_path):
 
 
 # ==========================
+# Histogram Saving
+# ==========================
+def save_histogram(t, npz_path, output_dir):
+    """Generate and save histogram of event timestamps."""
+    plt.figure(figsize=(10, 4))
+    plt.hist(t, bins=200)
+    plt.title(f"Histogram for {os.path.basename(npz_path)}")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Event count")
+
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, f"{os.path.basename(npz_path)}_hist.png")
+    plt.savefig(out_path)
+    plt.close()
+
+    print(f"[PLOT SAVED] {out_path}")
+
+
+# ==========================
 # Core Detection Logic
 # ==========================
 def detect_active_windows(npz_path, visualize=False, timeout=10):
@@ -89,26 +108,13 @@ def detect_active_windows(npz_path, visualize=False, timeout=10):
         active_duration = sum((e - s) for s, e in active_windows if e is not None)
         coverage_ratio = active_duration / total_duration if total_duration > 0 else 0
 
-        # Optional visualization
-        if visualize:
-            plt.figure(figsize=(10, 4))
-            plt.plot(bin_edges[:-1], counts, color="purple")
-            plt.axhline(threshold, color="orange", linestyle="--", label="Threshold")
-            for (s, e) in active_windows:
-                plt.axvspan(s, e, color="green", alpha=0.3)
-            plt.title(os.path.basename(npz_path))
-            plt.xlabel("Time (s)")
-            plt.ylabel("Event count")
-            plt.legend()
-            plt.show()
-
-        return active_windows, coverage_ratio, total_duration
+        return active_windows, coverage_ratio, total_duration, t
 
     except Exception as e:
         with open("bad_files.log", "a") as logf:
             logf.write(f"{npz_path}: {e}\n")
         print(f"[SKIP] {npz_path} ({e})")
-        return [], 0, 0
+        return [], 0, 0, None
 
 
 # ==========================
@@ -128,7 +134,15 @@ def check_overlap(active_windows, annotated_windows):
 def process_video(npz_path, annotations, output_dir, visualize=False):
     """Detect active windows for one video and optionally evaluate."""
     video_name = os.path.splitext(os.path.basename(npz_path))[0]
-    active_windows, coverage, total_duration = detect_active_windows(npz_path, visualize)
+    print(f"    → Processing video: {video_name}")
+
+    active_windows, coverage, total_duration, t = detect_active_windows(npz_path, visualize)
+
+    # ---- NEW: histogram saving ----
+    if t is not None:
+        hist_dir = os.path.join(output_dir, "histograms")
+        save_histogram(t, npz_path, hist_dir)
+    # ------------------------------
 
     # Optional evaluation
     success = None
@@ -152,13 +166,14 @@ def process_video(npz_path, annotations, output_dir, visualize=False):
     with open(json_path, "w") as jf:
         json.dump(result_data, jf, indent=2)
 
-    # ✅ ALSO SAVE TXT FILE
+    # Save TXT
     txt_path = os.path.join(output_dir, f"{video_name}_windows.txt")
     with open(txt_path, "w") as tf:
         for s, e in active_windows:
             tf.write(f"{s:.2f}\t{e:.2f}\n")
 
-    print(f"[SAVED] {video_name}: {len(active_windows)} active intervals → {json_path} / {txt_path}")
+    print(f"    [SAVED] {video_name}: {len(active_windows)} intervals")
+
     return result_data
 
 
@@ -169,6 +184,9 @@ def process_class(class_dir, annotations, output_root, visualize=False):
         f for f in glob(os.path.join(class_dir, "*.npz"))
         if os.path.getsize(f) > 0 and zipfile.is_zipfile(f)
     ]
+
+    print(f"\n[CLASS] Processing '{class_name}' ({len(npz_files)} videos)...")
+
     if not npz_files:
         print(f"[WARNING] No NPZ files found in {class_dir}")
         return None
@@ -185,7 +203,7 @@ def process_class(class_dir, annotations, output_root, visualize=False):
     with open(combined_json, "w") as jf:
         json.dump(all_results, jf, indent=2)
 
-    print(f"[INFO] Saved combined selections for class '{class_name}' → {combined_json}")
+    print(f"[DONE] Class '{class_name}' finished → saved {class_name}_all_windows.json")
     return all_results
 
 
@@ -193,7 +211,8 @@ def process_all(base_dir, annotation_txt, output_root="temporal_selections", vis
     """Run selection + evaluation for all class folders."""
     annotations = load_annotations(annotation_txt)
     class_dirs = [d for d in glob(os.path.join(base_dir, "*")) if os.path.isdir(d)]
-    print(f"[INFO] Found {len(class_dirs)} class folders.")
+
+    print(f"[INFO] Found {len(class_dirs)} class folders.\n")
 
     os.makedirs(output_root, exist_ok=True)
     summary = []
@@ -207,7 +226,7 @@ def process_all(base_dir, annotation_txt, output_root="temporal_selections", vis
     with open(global_json, "w") as jf:
         json.dump(summary, jf, indent=2)
 
-    print(f"\n[INFO] Global temporal selections saved → {global_json}")
+    print(f"\n[GLOBAL] Done. Results saved → {global_json}")
     return summary
 
 
