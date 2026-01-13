@@ -1,6 +1,5 @@
 import os
 import re
-import csv
 import json
 import time
 import zipfile
@@ -89,19 +88,6 @@ def detect_active_windows(npz_path, visualize=False, timeout=10):
         active_duration = sum((e - s) for s, e in active_windows if e is not None)
         coverage_ratio = active_duration / total_duration if total_duration > 0 else 0
 
-        # Optional visualization
-        if visualize:
-            plt.figure(figsize=(10, 4))
-            plt.plot(bin_edges[:-1], counts, color="purple")
-            plt.axhline(threshold, color="orange", linestyle="--", label="Threshold")
-            for (s, e) in active_windows:
-                plt.axvspan(s, e, color="green", alpha=0.3)
-            plt.title(os.path.basename(npz_path))
-            plt.xlabel("Time (s)")
-            plt.ylabel("Event count")
-            plt.legend()
-            plt.show()
-
         return active_windows, coverage_ratio, total_duration
 
     except Exception as e:
@@ -125,96 +111,83 @@ def check_overlap(active_windows, annotated_windows):
 # ==========================
 # Main Processing
 # ==========================
-def process_video(npz_path, annotations, output_dir, visualize=False):
-    """Detect active windows for one video and optionally evaluate."""
+def process_video(npz_path, annotations):
+    """Detect active windows for one video and return formatted result."""
     video_name = os.path.splitext(os.path.basename(npz_path))[0]
-    active_windows, coverage, total_duration = detect_active_windows(npz_path, visualize)
+    active_windows, coverage, total_duration = detect_active_windows(npz_path)
 
-    # Optional evaluation
-    success = None
+    # evaluation
     if video_name in annotations:
         success = check_overlap(active_windows, annotations[video_name])
+        result = "Success" if success else "Failure"
+    else:
+        result = "Unknown"
 
-    # Prepare save data
-    result_data = {
+    return {
         "video_name": video_name,
-        "npz_path": npz_path,
-        "active_windows": [(float(s), float(e)) for s, e in active_windows],
+        "result": result,
         "coverage_percent": round(coverage * 100, 2),
         "total_duration_sec": round(total_duration, 2),
-        "evaluation_success": bool(success) if success is not None else None,
+        "active_windows": [(float(s), float(e)) for s, e in active_windows],
     }
 
-    os.makedirs(output_dir, exist_ok=True)
 
-    # Save JSON
-    json_path = os.path.join(output_dir, f"{video_name}_windows.json")
-    with open(json_path, "w") as jf:
-        json.dump(result_data, jf, indent=2)
-
-    # ✅ ALSO SAVE TXT FILE
-    txt_path = os.path.join(output_dir, f"{video_name}_windows.txt")
-    with open(txt_path, "w") as tf:
-        for s, e in active_windows:
-            tf.write(f"{s:.2f}\t{e:.2f}\n")
-
-    print(f"[SAVED] {video_name}: {len(active_windows)} active intervals → {json_path} / {txt_path}")
-    return result_data
-
-
-def process_class(class_dir, annotations, output_root, visualize=False):
-    """Process all videos in one class folder."""
+def process_class(class_dir, annotations, output_root):
+    """Process all NPZ videos inside one class folder and save one JSON file."""
     class_name = os.path.basename(class_dir)
     npz_files = [
         f for f in glob(os.path.join(class_dir, "*.npz"))
         if os.path.getsize(f) > 0 and zipfile.is_zipfile(f)
     ]
+
     if not npz_files:
         print(f"[WARNING] No NPZ files found in {class_dir}")
         return None
 
-    class_output_dir = os.path.join(output_root, class_name)
-    all_results = []
+    results = []
 
     for npz_path in npz_files:
-        result = process_video(npz_path, annotations, class_output_dir, visualize)
-        all_results.append(result)
+        result = process_video(npz_path, annotations)
+        results.append(result)
+        print(f"[OK] Processed {result['video_name']} ({len(result['active_windows'])} windows)")
 
-    # Save combined JSON for class
-    combined_json = os.path.join(output_root, f"{class_name}_all_windows.json")
-    with open(combined_json, "w") as jf:
-        json.dump(all_results, jf, indent=2)
+    # Save class-level JSON
+    os.makedirs(output_root, exist_ok=True)
+    class_json_path = os.path.join(output_root, f"{class_name}_active_windows.json")
 
-    print(f"[INFO] Saved combined selections for class '{class_name}' → {combined_json}")
-    return all_results
+    with open(class_json_path, "w") as jf:
+        json.dump(results, jf, indent=2)
+
+    print(f"[SAVED] Class '{class_name}' → {class_json_path}")
+    return results
 
 
-def process_all(base_dir, annotation_txt, output_root="temporal_selections", visualize=False):
-    """Run selection + evaluation for all class folders."""
+def process_all(base_dir, annotation_txt, output_root="temporal_selections"):
+    """Run processing for all class folders."""
     annotations = load_annotations(annotation_txt)
     class_dirs = [d for d in glob(os.path.join(base_dir, "*")) if os.path.isdir(d)]
     print(f"[INFO] Found {len(class_dirs)} class folders.")
 
-    os.makedirs(output_root, exist_ok=True)
-    summary = []
+    all_results = []
 
     for class_dir in class_dirs:
-        class_results = process_class(class_dir, annotations, output_root, visualize)
+        class_results = process_class(class_dir, annotations, output_root)
         if class_results:
-            summary.extend(class_results)
+            all_results.extend(class_results)
 
-    global_json = os.path.join(output_root, "global_temporal_selection.json")
+    # Save global file
+    global_json = os.path.join(output_root, "global_active_windows.json")
     with open(global_json, "w") as jf:
-        json.dump(summary, jf, indent=2)
+        json.dump(all_results, jf, indent=2)
 
-    print(f"\n[INFO] Global temporal selections saved → {global_json}")
-    return summary
+    print(f"\n[INFO] Global results saved → {global_json}")
+    return all_results
 
 
 # ==========================
 # Entry Point
 # ==========================
 if __name__ == "__main__":
-    base_dir = "data/UCF-Crime-DVS"
+    base_dir = base_dir = "data/UCF-Crime-DVS-Test"
     annotation_txt = "data/uca_annotations/UCFCrime_Train.txt"
-    process_all(base_dir, annotation_txt, output_root="temporal_selections", visualize=False)
+    process_all(base_dir, annotation_txt, output_root="temporal_selections")
