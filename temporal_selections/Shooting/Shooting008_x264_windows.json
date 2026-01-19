@@ -1,0 +1,29 @@
+{
+  "video_name": "Shooting008_x264",
+  "npz_path": "data/UCF-Crime-DVS/Shooting/Shooting008_x264.npz",
+  "active_windows": [
+    [
+      0.8102641450000001,
+      12.580251605
+    ],
+    [
+      13.38275075,
+      13.91775018
+    ],
+    [
+      24.885238495000003,
+      25.68773764
+    ],
+    [
+      30.50273251,
+      30.770232225
+    ],
+    [
+      33.177729660000004,
+      33.71272909
+    ]
+  ],
+  "coverage_percent": 26.0,
+  "total_duration_sec": 53.5,
+  "evaluation_success": true
+}

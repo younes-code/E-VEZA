@@ -1,0 +1,17 @@
+{
+  "video_name": "Arrest017_x264",
+  "npz_path": "data/UCF-Crime-DVS/Arrest/Arrest017_x264.npz",
+  "active_windows": [
+    [
+      0.006656,
+      38.11810386
+    ],
+    [
+      41.53106934,
+      47.78817272
+    ]
+  ],
+  "coverage_percent": 39.0,
+  "total_duration_sec": 113.77,
+  "evaluation_success": true
+}

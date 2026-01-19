@@ -1,0 +1,33 @@
+{
+  "video_name": "Shoplifting054_x264",
+  "npz_path": "data/UCF-Crime-DVS/Shoplifting/Shoplifting054_x264.npz",
+  "active_windows": [
+    [
+      13.457784000000002,
+      14.466515400000002
+    ],
+    [
+      15.811490600000003,
+      16.483978200000003
+    ],
+    [
+      16.820222,
+      17.4927096
+    ],
+    [
+      18.8376848,
+      19.0058067
+    ],
+    [
+      22.3682447,
+      26.235048400000004
+    ],
+    [
+      30.438095900000004,
+      33.296168200000004
+    ]
+  ],
+  "coverage_percent": 27.5,
+  "total_duration_sec": 33.62,
+  "evaluation_success": null
+}

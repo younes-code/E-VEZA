@@ -1,0 +1,21 @@
+{
+  "video_name": "Explosion033_x264",
+  "npz_path": "data/UCF-Crime-DVS/Explosion/Explosion033_x264.npz",
+  "active_windows": [
+    [
+      0.004692,
+      0.52752241
+    ],
+    [
+      31.374516599999996,
+      45.490937669999994
+    ],
+    [
+      55.424715459999994,
+      59.08452833
+    ]
+  ],
+  "coverage_percent": 17.5,
+  "total_duration_sec": 104.57,
+  "evaluation_success": null
+}

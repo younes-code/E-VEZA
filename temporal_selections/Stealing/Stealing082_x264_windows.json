@@ -1,0 +1,21 @@
+{
+  "video_name": "Stealing082_x264",
+  "npz_path": "data/UCF-Crime-DVS/Stealing/Stealing082_x264.npz",
+  "active_windows": [
+    [
+      0.006489,
+      2.22064576
+    ],
+    [
+      23.808674169999996,
+      25.192522144999998
+    ],
+    [
+      41.52192825,
+      43.18254582
+    ]
+  ],
+  "coverage_percent": 9.5,
+  "total_duration_sec": 55.35,
+  "evaluation_success": null
+}

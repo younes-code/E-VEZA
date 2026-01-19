@@ -1,0 +1,21 @@
+{
+  "video_name": "Arson050_x264",
+  "npz_path": "data/UCF-Crime-DVS/Arson/Arson050_x264.npz",
+  "active_windows": [
+    [
+      3.1105212800000004,
+      5.44001324
+    ],
+    [
+      27.958435520000002,
+      36.2410736
+    ],
+    [
+      37.535235799999995,
+      38.829398
+    ]
+  ],
+  "coverage_percent": 23.0,
+  "total_duration_sec": 51.77,
+  "evaluation_success": null
+}

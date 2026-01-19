@@ -1,10 +1,41 @@
-torch
-torchvision
-torchaudio
-tonic
-h5py
-opencv-python
-transformers
-sentencepiece
-matplotlib
-tqdm
+archspec @ file:///croot/archspec_1709217642129/work
+boltons @ file:///croot/boltons_1677628692245/work
+Brotli @ file:///tmp/abs_ecyw11_7ze/croots/recipe/brotli-split_1659616059936/work
+certifi @ file:///croot/certifi_1707229174982/work/certifi
+cffi @ file:///croot/cffi_1700254295673/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+conda @ file:///croot/conda_1715635703388/work
+conda-content-trust @ file:///croot/conda-content-trust_1693490622020/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1702997573971/work/src
+conda-package-handling @ file:///croot/conda-package-handling_1690999929514/work
+conda_package_streaming @ file:///croot/conda-package-streaming_1690987966409/work
+cryptography @ file:///croot/cryptography_1707523700518/work
+distro @ file:///croot/distro_1701455004953/work
+frozendict @ file:///croot/frozendict_1713194832637/work
+idna @ file:///croot/idna_1666125576474/work
+joblib @ file:///croot/joblib_1685113087166/work
+jsonpatch @ file:///tmp/build/80754af9/jsonpatch_1615747632069/work
+jsonpointer==2.1
+libmambapy @ file:///croot/mamba-split_1698782620632/work/libmambapy
+menuinst @ file:///croot/menuinst_1706732933928/work
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+numpy @ file:///croot/numpy_and_numpy_base_1708638617955/work/dist/numpy-1.26.4-cp310-cp310-linux_x86_64.whl#sha256=d8cd837ed43e87f77e6efaa08e8de927ca030a1c9c5d04624432d6fb9a74a5ee
+packaging @ file:///croot/packaging_1693575174725/work
+platformdirs @ file:///croot/platformdirs_1692205439124/work
+pluggy @ file:///tmp/build/80754af9/pluggy_1648024709248/work
+pycosat @ file:///croot/pycosat_1696536503704/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///croot/pyopenssl_1708380408460/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+requests @ file:///croot/requests_1707355572290/work
+ruamel.yaml @ file:///croot/ruamel.yaml_1666304550667/work
+ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1666302247304/work
+scikit-learn @ file:///croot/scikit-learn_1694788527225/work
+scipy @ file:///croot/scipy_1701295040508/work/dist/scipy-1.11.4-cp310-cp310-linux_x86_64.whl#sha256=a5e5a33a143f627fd4bde622162664c9ea97ff3af56f51c0f4c76ec9d1a340a3
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+tqdm @ file:///croot/tqdm_1679561862951/work
+truststore @ file:///croot/truststore_1695244293384/work
+urllib3 @ file:///croot/urllib3_1707770551213/work
+zstandard @ file:///croot/zstandard_1677013143055/work

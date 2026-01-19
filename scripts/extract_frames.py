@@ -5,9 +5,9 @@ import json
 # ----------------------------
 # Paths
 # ----------------------------
-video_path = "data/UCF-Crime-RGB/Fighting017_x264.mp4"
+video_path = "data/UCF-Crime-RGB/Shoplifting"
 windows_json = "temporal_selections/factive.json"   
-output_folder = "data/frames/Fighting017_x264_active"
+output_folder = "data/frames/Shoplifting"
 
 os.makedirs(output_folder, exist_ok=True)
 

@@ -1,0 +1,25 @@
+{
+  "video_name": "Abuse030_x264",
+  "npz_path": "data/UCF-Crime-DVS/Abuse/Abuse030_x264.npz",
+  "active_windows": [
+    [
+      0.004337,
+      0.25682539499999996
+    ],
+    [
+      7.326500454999999,
+      8.841430824999998
+    ],
+    [
+      13.133733539999998,
+      13.638710329999999
+    ],
+    [
+      35.10022390499999,
+      35.60520069499999
+    ]
+  ],
+  "coverage_percent": 5.5,
+  "total_duration_sec": 50.5,
+  "evaluation_success": true
+}

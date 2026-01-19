@@ -1,0 +1,17 @@
+{
+  "video_name": "Burglary033_x264",
+  "npz_path": "data/UCF-Crime-DVS/Burglary/Burglary033_x264.npz",
+  "active_windows": [
+    [
+      0.004288,
+      12.273109300000002
+    ],
+    [
+      20.247843145,
+      20.86128421
+    ]
+  ],
+  "coverage_percent": 31.5,
+  "total_duration_sec": 40.9,
+  "evaluation_success": true
+}

@@ -1,0 +1,33 @@
+{
+  "video_name": "Assault025_x264",
+  "npz_path": "data/UCF-Crime-DVS/Assualt/Assault025_x264.npz",
+  "active_windows": [
+    [
+      7.4381,
+      8.367272875
+    ],
+    [
+      23.41987345,
+      23.605708025
+    ],
+    [
+      23.977377175,
+      24.16321175
+    ],
+    [
+      24.720715475,
+      24.90655005
+    ],
+    [
+      25.464053775,
+      26.0215575
+    ],
+    [
+      31.2249256,
+      36.985797425
+    ]
+  ],
+  "coverage_percent": 21.0,
+  "total_duration_sec": 37.17,
+  "evaluation_success": true
+}

@@ -1,22 +1,33 @@
-# Ignore video and image files in all folders
-*.mp4
-*.npz
-*.png
+# Create or overwrite .gitignore in the root of E-VEZA project
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
 
-# Ignore video and image files in subfolders
-data/**/*.mp4
-data/**/*.npz
-data/**/*.png
+# Large data folders - NEVER commit these
+data/
+active_frames_output/
+frames/
+videos/
+UCF_Crimes_Frames/
+videos_frames/
+extracted_frames/
+output_frames/
 
-plots/**/*.mp4
-plots/**/*.npz
-plots/**/*.png
+# Temporary / logs that grow big or are machine-specific
+*.log
+*.tmp
+*.temp
+bad_files_*.log
 
-active_rgb_windows/**/*.mp4
-active_rgb_windows/**/*.npz
-active_rgb_windows/**/*.png
-
-# Do NOT ignore the folders themselves
-!data/
-!plots/
-!active_rgb_windows/
+# Common junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
+EOF

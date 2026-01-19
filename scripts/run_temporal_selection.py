@@ -43,6 +43,25 @@ def load_annotations(txt_path):
 
 
 # ==========================
+# Histogram Saving
+# ==========================
+def save_histogram(t, npz_path, output_dir):
+    """Generate and save histogram of event timestamps."""
+    plt.figure(figsize=(10, 4))
+    plt.hist(t, bins=200)
+    plt.title(f"Histogram for {os.path.basename(npz_path)}")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Event count")
+
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, f"{os.path.basename(npz_path)}_hist.png")
+    plt.savefig(out_path)
+    plt.close()
+
+    print(f"[PLOT SAVED] {out_path}")
+
+
+# ==========================
 # Core Detection Logic
 # ==========================
 def detect_active_windows(npz_path, visualize=False, timeout=10):
@@ -94,7 +113,7 @@ def detect_active_windows(npz_path, visualize=False, timeout=10):
         with open("bad_files.log", "a") as logf:
             logf.write(f"{npz_path}: {e}\n")
         print(f"[SKIP] {npz_path} ({e})")
-        return [], 0, 0
+        return [], 0, 0, None
 
 
 # ==========================
@@ -166,7 +185,8 @@ def process_all(base_dir, annotation_txt, output_root="temporal_selections"):
     """Run processing for all class folders."""
     annotations = load_annotations(annotation_txt)
     class_dirs = [d for d in glob(os.path.join(base_dir, "*")) if os.path.isdir(d)]
-    print(f"[INFO] Found {len(class_dirs)} class folders.")
+
+    print(f"[INFO] Found {len(class_dirs)} class folders.\n")
 
     all_results = []
 
