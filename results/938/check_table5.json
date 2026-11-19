@@ -1,0 +1,87 @@
+{
+  "mplug": {
+    "got": {
+      "veza": [
+        88.4,
+        63.4,
+        25.5
+      ],
+      "eveza": [
+        88.3,
+        64.4,
+        26.2
+      ]
+    },
+    "expected": {
+      "veza": [
+        88.7,
+        65.4,
+        26.8
+      ],
+      "eveza": [
+        88.9,
+        66.0,
+        27.3
+      ]
+    },
+    "frames_ratio_pct": 28.3,
+    "eveza_videos_without_caption": 2
+  },
+  "blip": {
+    "got": {
+      "veza": [
+        90.7,
+        62.9,
+        24.0
+      ],
+      "eveza": [
+        90.5,
+        63.9,
+        28.8
+      ]
+    },
+    "expected": {
+      "veza": [
+        91.7,
+        65.5,
+        25.1
+      ],
+      "eveza": [
+        92.5,
+        65.7,
+        30.0
+      ]
+    },
+    "frames_ratio_pct": 28.0,
+    "eveza_videos_without_caption": 0
+  },
+  "git": {
+    "got": {
+      "veza": [
+        78.8,
+        48.2,
+        19.2
+      ],
+      "eveza": [
+        79.5,
+        49.9,
+        17.5
+      ]
+    },
+    "expected": {
+      "veza": [
+        80.3,
+        50.3,
+        20.3
+      ],
+      "eveza": [
+        81.1,
+        52.0,
+        18.5
+      ]
+    },
+    "frames_ratio_pct": 28.3,
+    "eveza_videos_without_caption": 2
+  },
+  "n_videos": 938
+}

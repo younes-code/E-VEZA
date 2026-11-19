@@ -1,0 +1,17 @@
+BLIP-2 caption grid per class (median frame-index gap: 30 = 1 s, 90 = 3 s at 30 fps)
+  Abuse          {30: 50}
+  Arrest         {30: 50}
+  Arson          {30: 50}
+  Assault        {30: 41, 90: 9}
+  Burglary       {30: 100}
+  Explosion      {90: 50}
+  Fighting       {30: 50}
+  Normal         {90: 50}
+  RoadAccidents  {30: 150}
+  Robbery        {30: 150}
+  Shooting       {30: 50}
+  Shoplifting    {30: 50}
+  Stealing       {30: 100}
+  Vandalism      {90: 50}
+eval888: {30: 791, 90: 97}
+eval938: {30: 832, 90: 106}

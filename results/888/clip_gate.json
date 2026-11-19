@@ -1,0 +1,227 @@
+{
+  "n_videos": 888,
+  "model": "ViT-B-32-quickgelu/metaclip_400m",
+  "prompts": {
+    "Abuse": [
+      "a surveillance camera image of abuse",
+      "a surveillance camera image of maltreatment",
+      "a surveillance camera image of mistreatment",
+      "a surveillance camera image of cruelty",
+      "a surveillance camera image of harm"
+    ],
+    "Arrest": [
+      "a surveillance camera image of arrest",
+      "a surveillance camera image of detain",
+      "a surveillance camera image of apprehend",
+      "a surveillance camera image of capture",
+      "a surveillance camera image of take into custody"
+    ],
+    "Arson": [
+      "a surveillance camera image of arson",
+      "a surveillance camera image of fire-raising",
+      "a surveillance camera image of incendiarism",
+      "a surveillance camera image of pyromania",
+      "a surveillance camera image of torching"
+    ],
+    "Assault": [
+      "a surveillance camera image of assault",
+      "a surveillance camera image of attack",
+      "a surveillance camera image of physical attack",
+      "a surveillance camera image of aggression",
+      "a surveillance camera image of violence"
+    ],
+    "Burglary": [
+      "a surveillance camera image of burglary",
+      "a surveillance camera image of break-in",
+      "a surveillance camera image of robbery",
+      "a surveillance camera image of housebreaking",
+      "a surveillance camera image of theft"
+    ],
+    "Explosion": [
+      "a surveillance camera image of explosion",
+      "a surveillance camera image of blast",
+      "a surveillance camera image of detonation",
+      "a surveillance camera image of eruption",
+      "a surveillance camera image of blowup"
+    ],
+    "Fighting": [
+      "a surveillance camera image of fighting",
+      "a surveillance camera image of brawling",
+      "a surveillance camera image of combat",
+      "a surveillance camera image of conflict",
+      "a surveillance camera image of struggle"
+    ],
+    "Accident": [
+      "a surveillance camera image of accident",
+      "a surveillance camera image of crash",
+      "a surveillance camera image of collision",
+      "a surveillance camera image of traffic accident",
+      "a surveillance camera image of car accident"
+    ],
+    "Robbery": [
+      "a surveillance camera image of robbery",
+      "a surveillance camera image of theft",
+      "a surveillance camera image of heist",
+      "a surveillance camera image of larceny",
+      "a surveillance camera image of hold-up"
+    ],
+    "Shooting": [
+      "a surveillance camera image of shooting",
+      "a surveillance camera image of gunfire",
+      "a surveillance camera image of gunfight",
+      "a surveillance camera image of gunplay",
+      "a surveillance camera image of firing"
+    ],
+    "Shoplifting": [
+      "a surveillance camera image of shoplifting",
+      "a surveillance camera image of theft",
+      "a surveillance camera image of pilfering",
+      "a surveillance camera image of larceny",
+      "a surveillance camera image of stealing"
+    ],
+    "Stealing": [
+      "a surveillance camera image of stealing",
+      "a surveillance camera image of theft",
+      "a surveillance camera image of larceny",
+      "a surveillance camera image of robbery",
+      "a surveillance camera image of pilfering"
+    ],
+    "Vandalism": [
+      "a surveillance camera image of vandalism",
+      "a surveillance camera image of destruction",
+      "a surveillance camera image of defacement",
+      "a surveillance camera image of sabotage",
+      "a surveillance camera image of graffiti"
+    ]
+  },
+  "vote/all": {
+    "top1_3_5": [
+      32.3,
+      57.8,
+      71.7
+    ],
+    "frames_per_video": 37.75,
+    "videos_with_no_gated_frame": 0
+  },
+  "vote/gated_B200": {
+    "top1_3_5": [
+      32.1,
+      57.5,
+      71.4
+    ],
+    "frames_per_video": 10.7,
+    "videos_with_no_gated_frame": 1,
+    "frames_pct_of_all": 28.4,
+    "mcnemar_top1_vs_all": {
+      "all_only": 30,
+      "gated_only": 28,
+      "p": 0.8956832138895906
+    },
+    "top1_wilson": [
+      29.1,
+      35.2
+    ],
+    "mcnemar_top5_vs_all": {
+      "all_only": 24,
+      "gated_only": 21,
+      "p": 0.765991824244793
+    },
+    "top5_wilson": [
+      68.3,
+      74.3
+    ]
+  },
+  "vote/gated_B500": {
+    "top1_3_5": [
+      32.2,
+      57.8,
+      71.3
+    ],
+    "frames_per_video": 12.35,
+    "videos_with_no_gated_frame": 1,
+    "frames_pct_of_all": 32.7,
+    "mcnemar_top1_vs_all": {
+      "all_only": 26,
+      "gated_only": 25,
+      "p": 1.0
+    },
+    "top1_wilson": [
+      29.2,
+      35.4
+    ],
+    "mcnemar_top5_vs_all": {
+      "all_only": 22,
+      "gated_only": 18,
+      "p": 0.6358280026288412
+    },
+    "top5_wilson": [
+      68.2,
+      74.2
+    ]
+  },
+  "mean/all": {
+    "top1_3_5": [
+      31.6,
+      55.9,
+      69.9
+    ],
+    "frames_per_video": 37.75,
+    "videos_with_no_gated_frame": 0
+  },
+  "mean/gated_B200": {
+    "top1_3_5": [
+      32.1,
+      56.2,
+      70.3
+    ],
+    "frames_per_video": 10.7,
+    "videos_with_no_gated_frame": 1,
+    "frames_pct_of_all": 28.4,
+    "mcnemar_top1_vs_all": {
+      "all_only": 27,
+      "gated_only": 31,
+      "p": 0.6940040940761318
+    },
+    "top1_wilson": [
+      29.1,
+      35.2
+    ],
+    "mcnemar_top5_vs_all": {
+      "all_only": 26,
+      "gated_only": 29,
+      "p": 0.7877061896700431
+    },
+    "top5_wilson": [
+      67.2,
+      73.2
+    ]
+  },
+  "mean/gated_B500": {
+    "top1_3_5": [
+      32.3,
+      55.6,
+      70.2
+    ],
+    "frames_per_video": 12.35,
+    "videos_with_no_gated_frame": 1,
+    "frames_pct_of_all": 32.7,
+    "mcnemar_top1_vs_all": {
+      "all_only": 20,
+      "gated_only": 26,
+      "p": 0.4613911821367651
+    },
+    "top1_wilson": [
+      29.3,
+      35.5
+    ],
+    "mcnemar_top5_vs_all": {
+      "all_only": 22,
+      "gated_only": 24,
+      "p": 0.8829959121223965
+    },
+    "top5_wilson": [
+      67.1,
+      73.1
+    ]
+  }
+}

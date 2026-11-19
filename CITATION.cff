@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "E-VEZA: Efficient Neuromorphic Event-Guided Zero-Shot Video Anomaly Detection"
+type: software
+license: MIT
+repository-code: "https://github.com/younes-code/E-VEZA"
+authors:
+  - family-names: Kebour
+    given-names: Younes
+  - family-names: Niar
+    given-names: Smail
+  - family-names: Ihaddadene
+    given-names: Nacim
+  - family-names: Bekrar
+    given-names: Abdelghani
+  - family-names: Elbez
+    given-names: Hammouda
+preferred-citation:
+  type: article
+  title: "E-VEZA: Efficient Neuromorphic Event-Guided Zero-Shot Video Anomaly Detection"
+  journal: "Multimedia Tools and Applications"
+  year: 2026
+  authors:
+    - family-names: Kebour
+      given-names: Younes
+    - family-names: Niar
+      given-names: Smail
+    - family-names: Ihaddadene
+      given-names: Nacim
+    - family-names: Bekrar
+      given-names: Abdelghani
+    - family-names: Elbez
+      given-names: Hammouda

@@ -1,0 +1,16 @@
+# Versions used for the reported results (full environment: results/pip_freeze.txt)
+numpy==1.26.4
+scipy==1.15.3
+matplotlib==3.10.6
+nltk==3.10.3
+opencv-python==4.11.0.86
+pillow==11.3.0
+tqdm==4.67.1
+torch==2.8.0
+torchvision==0.23.0
+transformers==4.56.2
+sentence-transformers==5.7.0
+open_clip_torch==4.2.2
+# Captioning only (BLIP-2 / GIT in 4- or 8-bit)
+accelerate
+bitsandbytes

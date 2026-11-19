@@ -1,0 +1,77 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+12 frames found
+[git-base-coco] Arson025_x264/1621
+   stored: a person is throwing a cigarette in the air.
+   gen   : a person is throwing a cigarette in the air.
+[git-base-coco] Explosion003_x264/361
+   stored: a car driving down a highway next to a billboard.
+   gen   : a car driving down a highway next to a billboard.
+[git-base-coco] Robbery128_x264/5221
+   stored: a photo of a computer screen in a store.
+   gen   : a photo of a computer screen in a store.
+[git-base-coco] Burglary037_x264/1081
+   stored: a man is cleaning a sink in a room.
+   gen   : a man is cleaning a sink in a room.
+[git-base-coco] Robbery066_x264/811
+   stored: a woman sitting in a chair next to a computer.
+   gen   : a woman sitting in a chair next to a computer.
+[git-base-coco] Explosion046_x264/2161
+   stored: a black and white photo of a parking lot with cars parked in it.
+   gen   : a black and white photo of a parking lot with cars parked in it.
+[git-base-coco] RoadAccidents008_x264/1171
+   stored: a car parked on the side of a street.
+   gen   : a car parked on the side of a street.
+[git-base-coco] Explosion046_x264/124021
+   stored: fire in the street after a car accident
+   gen   : fire in the street after a car accident
+[git-base-coco] Robbery023_x264/181
+   stored: two men looking at a display case in a store.
+   gen   : two men looking at a display case in a store.
+[git-base-coco] Shoplifting044_x264/10531
+   stored: a man standing in front of a computer.
+   gen   : a man standing in front of a computer.
+[git-base-coco] Robbery042_x264/541
+   stored: two men are standing in front of a computer.
+   gen   : two men are standing in front of a computer.
+[git-base-coco] Robbery011_x264/1081
+   stored: a person standing in a store with a person holding an umbrella.
+   gen   : a person standing in a store with a person holding an umbrella.
+== microsoft/git-base-coco: 12/12 exact matches
+[git-large-coco] Arson025_x264/1621
+   stored: a person is throwing a cigarette in the air.
+   gen   : a car is driving down the street and a car is driving down the street.
+[git-large-coco] Explosion003_x264/361
+   stored: a car driving down a highway next to a billboard.
+   gen   : a car is driving down a highway with other cars.
+[git-large-coco] Robbery128_x264/5221
+   stored: a photo of a computer screen in a store.
+   gen   : a photo of a store with a woman in the foreground.
+[git-large-coco] Burglary037_x264/1081
+   stored: a man is cleaning a sink in a room.
+   gen   : a man is seen in a dark room.
+[git-large-coco] Robbery066_x264/811
+   stored: a woman sitting in a chair next to a computer.
+   gen   : a woman is seen behind a cashier in a shop.
+[git-large-coco] Explosion046_x264/2161
+   stored: a black and white photo of a parking lot with cars parked in it.
+   gen   : a black and white photo of a car parked in a parking lot.
+[git-large-coco] RoadAccidents008_x264/1171
+   stored: a car parked on the side of a street.
+   gen   : a car parked in a garage.
+[git-large-coco] Explosion046_x264/124021
+   stored: fire in the street after a car accident
+   gen   : a fire truck is parked in a parking lot.
+[git-large-coco] Robbery023_x264/181
+   stored: two men looking at a display case in a store.
+   gen   : a couple of men looking at items in a store.
+[git-large-coco] Shoplifting044_x264/10531
+   stored: a man standing in front of a computer.
+   gen   : a man is standing in front of a computer.
+[git-large-coco] Robbery042_x264/541
+   stored: two men are standing in front of a computer.
+   gen   : a man is standing in front of a cash register.
+[git-large-coco] Robbery011_x264/1081
+   stored: a person standing in a store with a person holding an umbrella.
+   gen   : a woman is standing in front of a cash register.
+== microsoft/git-large-coco: 0/12 exact matches
+[SAVED] results_r2/git_provenance.json

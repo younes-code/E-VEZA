@@ -1,0 +1,10 @@
+/home/junia/miniconda3/envs/eveza/lib/python3.10/site-packages/nltk/downloader.py:1076: UserWarning: NLTK will not authorize the non-private download directory '/home/junia/nltk_data': it (or an ancestor) is world- or group-writable, so another local user could plant files there. Choose a private location such as ~/nltk_data.
+  for msg in self.incr_download(info_or_id, download_dir, force):
+[INFO] eval list from eval888.txt: 888 videos
+[INFO] 0 eval videos have no readable npz (they keep the published windows)
+B=  50  R@10/5/1 (87.4, 63.5, 29.2)  captions/video 8.67 (23.0 % of VEZA)  7s
+B= 100  R@10/5/1 (88.0, 65.0, 28.3)  captions/video 9.70 (25.7 % of VEZA)  5s
+[SANITY] recomputed B=200 windows identical to published for 888/888 videos
+B= 200  R@10/5/1 (88.9, 66.0, 27.3)  captions/video 10.70 (28.4 % of VEZA)  5s
+B= 500  R@10/5/1 (89.3, 66.8, 26.7)  captions/video 12.35 (32.7 % of VEZA)  6s
+[SAVED] results_r2/888/bins_endtoend.json

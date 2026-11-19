@@ -1,0 +1,234 @@
+{
+  "n_videos": 888,
+  "mplug": {
+    "veza": [
+      88.7,
+      65.4,
+      26.8
+    ],
+    "eveza": [
+      88.9,
+      66.0,
+      27.3
+    ],
+    "mcnemar_R1": {
+      "veza_only": 43,
+      "eveza_only": 47,
+      "p": 0.7520332015985953
+    },
+    "mcnemar_R5": {
+      "veza_only": 53,
+      "eveza_only": 58,
+      "p": 0.7043793154248917
+    },
+    "mcnemar_R10": {
+      "veza_only": 30,
+      "eveza_only": 31,
+      "p": 1.0
+    },
+    "tokens_veza_median": 625.5,
+    "tokens_eveza_median": 188.5,
+    "pct_truncated_veza": 59.6,
+    "pct_truncated_eveza": 12.6,
+    "sampling_interval_s": {
+      "median": 3.0,
+      "videos_at_<=1.5s": 0,
+      "videos_at_>=2.5s": 888
+    },
+    "captions_per_video": {
+      "veza": 37.744369369369366,
+      "eveza": 10.704954954954955
+    },
+    "random_matched": {
+      "mean": [
+        88.4,
+        64.1,
+        27.2
+      ],
+      "sd": [
+        0.4,
+        0.8,
+        0.5
+      ],
+      "min": [
+        88.0,
+        63.0,
+        26.1
+      ],
+      "max": [
+        89.1,
+        65.5,
+        27.8
+      ]
+    },
+    "chunked_veza": [
+      89.8,
+      65.2,
+      27.7
+    ],
+    "chunked_eveza": [
+      88.6,
+      66.0,
+      27.4
+    ],
+    "chunked_mcnemar_R1": {
+      "veza_only": 50,
+      "eveza_only": 47,
+      "p": 0.8392136618440825
+    }
+  },
+  "blip": {
+    "veza": [
+      91.7,
+      65.5,
+      25.1
+    ],
+    "eveza": [
+      92.5,
+      65.7,
+      30.0
+    ],
+    "mcnemar_R1": {
+      "veza_only": 44,
+      "eveza_only": 87,
+      "p": 0.00021577652478126048
+    },
+    "mcnemar_R5": {
+      "veza_only": 55,
+      "eveza_only": 56,
+      "p": 1.0
+    },
+    "mcnemar_R10": {
+      "veza_only": 17,
+      "eveza_only": 24,
+      "p": 0.34888887944907765
+    },
+    "tokens_veza_median": 508.0,
+    "tokens_eveza_median": 155.0,
+    "pct_truncated_veza": 49.8,
+    "pct_truncated_eveza": 11.7,
+    "sampling_interval_s": {
+      "median": 1.0,
+      "videos_at_<=1.5s": 791,
+      "videos_at_>=2.5s": 97
+    },
+    "captions_per_video": {
+      "veza": 140.6295045045045,
+      "eveza": 39.4527027027027
+    },
+    "random_matched": {
+      "mean": [
+        91.5,
+        65.2,
+        28.8
+      ],
+      "sd": [
+        0.3,
+        0.4,
+        0.8
+      ],
+      "min": [
+        91.0,
+        64.5,
+        27.6
+      ],
+      "max": [
+        92.0,
+        65.9,
+        30.2
+      ]
+    },
+    "chunked_veza": [
+      91.8,
+      66.4,
+      26.6
+    ],
+    "chunked_eveza": [
+      92.5,
+      65.3,
+      30.6
+    ],
+    "chunked_mcnemar_R1": {
+      "veza_only": 42,
+      "eveza_only": 78,
+      "p": 0.0012993330972502712
+    }
+  },
+  "git": {
+    "veza": [
+      80.3,
+      50.3,
+      20.3
+    ],
+    "eveza": [
+      81.1,
+      52.0,
+      18.5
+    ],
+    "mcnemar_R1": {
+      "veza_only": 51,
+      "eveza_only": 35,
+      "p": 0.10522535125694396
+    },
+    "mcnemar_R5": {
+      "veza_only": 51,
+      "eveza_only": 66,
+      "p": 0.19534905940457784
+    },
+    "mcnemar_R10": {
+      "veza_only": 53,
+      "eveza_only": 60,
+      "p": 0.5726564757939484
+    },
+    "tokens_veza_median": 130.5,
+    "tokens_eveza_median": 43.0,
+    "pct_truncated_veza": 8.6,
+    "pct_truncated_eveza": 0.2,
+    "sampling_interval_s": {
+      "median": 3.0,
+      "videos_at_<=1.5s": 0,
+      "videos_at_>=2.5s": 888
+    },
+    "captions_per_video": {
+      "veza": 37.7454954954955,
+      "eveza": 10.704954954954955
+    },
+    "random_matched": {
+      "mean": [
+        80.6,
+        49.4,
+        18.0
+      ],
+      "sd": [
+        0.7,
+        0.8,
+        0.6
+      ],
+      "min": [
+        79.1,
+        48.3,
+        17.3
+      ],
+      "max": [
+        81.9,
+        50.5,
+        19.1
+      ]
+    },
+    "chunked_veza": [
+      80.9,
+      50.6,
+      20.3
+    ],
+    "chunked_eveza": [
+      81.1,
+      52.0,
+      18.5
+    ],
+    "chunked_mcnemar_R1": {
+      "veza_only": 49,
+      "eveza_only": 33,
+      "p": 0.09703091129729907
+    }
+  }
+}

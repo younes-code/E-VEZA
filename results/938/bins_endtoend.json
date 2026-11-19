@@ -1,0 +1,132 @@
+{
+  "veza_full": {
+    "rak": [
+      88.4,
+      63.4,
+      25.5
+    ],
+    "captions_per_video": 37.3
+  },
+  "B50": {
+    "rak": [
+      86.6,
+      61.5,
+      27.8
+    ],
+    "captions_per_video": 8.51,
+    "frames_pct_of_veza": 22.8,
+    "windows_per_video": 4.22,
+    "no_caption_videos": 14,
+    "R10_wilson": [
+      84.2,
+      88.6
+    ],
+    "mcnemar_R1_vs_B200": {
+      "B200_only": 30,
+      "this_only": 45,
+      "p": 0.10534226887460482
+    },
+    "mcnemar_R5_vs_B200": {
+      "B200_only": 53,
+      "this_only": 26,
+      "p": 0.003183010628835073
+    },
+    "mcnemar_R10_vs_B200": {
+      "B200_only": 35,
+      "this_only": 19,
+      "p": 0.04022356409571669
+    }
+  },
+  "B100": {
+    "rak": [
+      87.5,
+      63.1,
+      27.1
+    ],
+    "captions_per_video": 9.52,
+    "frames_pct_of_veza": 25.5,
+    "windows_per_video": 6.54,
+    "no_caption_videos": 4,
+    "R10_wilson": [
+      85.3,
+      89.5
+    ],
+    "mcnemar_R1_vs_B200": {
+      "B200_only": 18,
+      "this_only": 26,
+      "p": 0.2912152365458951
+    },
+    "mcnemar_R5_vs_B200": {
+      "B200_only": 33,
+      "this_only": 21,
+      "p": 0.13367423536410522
+    },
+    "mcnemar_R10_vs_B200": {
+      "B200_only": 18,
+      "this_only": 11,
+      "p": 0.26493089646101
+    }
+  },
+  "B200": {
+    "rak": [
+      88.3,
+      64.4,
+      26.2
+    ],
+    "captions_per_video": 10.54,
+    "frames_pct_of_veza": 28.3,
+    "windows_per_video": 10.16,
+    "no_caption_videos": 2,
+    "R10_wilson": [
+      86.1,
+      90.2
+    ],
+    "mcnemar_R1_vs_B200": {
+      "B200_only": 0,
+      "this_only": 0,
+      "p": 1.0
+    },
+    "mcnemar_R5_vs_B200": {
+      "B200_only": 0,
+      "this_only": 0,
+      "p": 1.0
+    },
+    "mcnemar_R10_vs_B200": {
+      "B200_only": 0,
+      "this_only": 0,
+      "p": 1.0
+    }
+  },
+  "B500": {
+    "rak": [
+      88.9,
+      65.0,
+      25.5
+    ],
+    "captions_per_video": 12.16,
+    "frames_pct_of_veza": 32.6,
+    "windows_per_video": 19.76,
+    "no_caption_videos": 1,
+    "R10_wilson": [
+      86.7,
+      90.8
+    ],
+    "mcnemar_R1_vs_B200": {
+      "B200_only": 23,
+      "this_only": 16,
+      "p": 0.3367836351899315
+    },
+    "mcnemar_R5_vs_B200": {
+      "B200_only": 19,
+      "this_only": 25,
+      "p": 0.4513808323961257
+    },
+    "mcnemar_R10_vs_B200": {
+      "B200_only": 11,
+      "this_only": 17,
+      "p": 0.34492845088243484
+    }
+  },
+  "n_videos": 938,
+  "B200_windows_identical_to_published": 938
+}

@@ -1,0 +1,15 @@
+/home/junia/miniconda3/envs/eveza/lib/python3.10/site-packages/nltk/downloader.py:1076: UserWarning: NLTK will not authorize the non-private download directory '/home/junia/nltk_data': it (or an ancestor) is world- or group-writable, so another local user could plant files there. Choose a private location such as ~/nltk_data.
+  for msg in self.incr_download(info_or_id, download_dir, force):
+[INFO] eval list from eval938.txt: 938 videos
+MISMATCH mplug veza  got (88.4, 63.4, 25.5)  expected (88.7, 65.4, 26.8)
+MISMATCH mplug eveza got (88.3, 64.4, 26.2)  expected (88.9, 66.0, 27.3)
+     mplug frames kept 28.3 %   no-caption videos 2
+MISMATCH blip  veza  got (90.7, 62.9, 24.0)  expected (91.7, 65.5, 25.1)
+MISMATCH blip  eveza got (90.5, 63.9, 28.8)  expected (92.5, 65.7, 30.0)
+     blip  frames kept 28.0 %   no-caption videos 0
+MISMATCH git   veza  got (78.8, 48.2, 19.2)  expected (80.3, 50.3, 20.3)
+MISMATCH git   eveza got (79.5, 49.9, 17.5)  expected (81.1, 52.0, 18.5)
+     git   frames kept 28.3 %   no-caption videos 2
+[SAVED] results_r2/938/check_table5.json
+
+STOP: adjust CONFIG in r2_common.py (or --eval-list) until Table 5 reproduces.

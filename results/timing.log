@@ -1,0 +1,5 @@
+decode per frame (s): {'mean': 0.016491044908154714, 'median': 0.015515688999585109, 'n': 871}
+MetaCLIP: {'model': 'ViT-B-32-quickgelu/metaclip_400m', 'precision': 'fp16', 's_per_frame_batch1': 0.007500158000311785, 's_per_frame_batch32': 0.002035696203108728, 'peak_gpu_MiB': 357.89453125}
+gate per video (s): {'mean': 1.0610679325399177, 'median': 0.7091559125001368, 'n': 50}
+break-even recogniser latency L* = 22.8 ms/frame (c_g=1.061s, d=16.5ms, N=37.7, r=0.284)
+[SAVED] ../results_r2/timing.json

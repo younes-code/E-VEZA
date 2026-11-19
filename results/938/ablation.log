@@ -1,0 +1,28 @@
+  100/938 histograms (0s)
+  200/938 histograms (56s)
+  300/938 histograms (56s)
+  400/938 histograms (56s)
+  500/938 histograms (57s)
+  600/938 histograms (57s)
+  700/938 histograms (57s)
+  800/938 histograms (57s)
+  900/938 histograms (57s)
+/home/junia/miniconda3/envs/eveza/lib/python3.10/site-packages/nltk/downloader.py:1076: UserWarning: NLTK will not authorize the non-private download directory '/home/junia/nltk_data': it (or an ancestor) is world- or group-writable, so another local user could plant files there. Choose a private location such as ~/nltk_data.
+  for msg in self.incr_download(info_or_id, download_dir, force):
+[INFO] 938 videos: 888 histograms from variant_counts_cache.npz, 50 loaded from streams
+[VERIFY] cached histograms identical to a full stream reload: 20/20 (max |dT| 0 s, max |d tmin| 0 s)
+VEZA (88.4, 63.4, 25.5)   published windows (88.3, 64.4, 26.2)
+
+== edges rel
+  MAD     R@10/5/1 (88.2, 64.4, 26.2)  captions/video 10.53  no-caption   2  McNemar vs MAD R@1 0/0 p=1  R@5 0/0 p=1
+  Mean    R@10/5/1 (86.6, 61.6, 25.7)  captions/video 6.18  no-caption  20  McNemar vs MAD R@1 46/41 p=0.668  R@5 63/37 p=0.012
+  Fixed   R@10/5/1 (88.8, 64.7, 25.7)  captions/video 10.62  no-caption   2  McNemar vs MAD R@1 23/18 p=0.533  R@5 23/26 p=0.775
+  Median  R@10/5/1 (89.0, 64.1, 26.1)  captions/video 22.28  no-caption   0  McNemar vs MAD R@1 43/42 p=1  R@5 48/45 p=0.836
+[SANITY] abs-edge MAD windows identical to published for 938/938 videos
+
+== edges abs
+  MAD     R@10/5/1 (88.3, 64.4, 26.2)  captions/video 10.54  no-caption   2  McNemar vs MAD R@1 0/0 p=1  R@5 0/0 p=1
+  Mean    R@10/5/1 (86.7, 61.7, 25.8)  captions/video 6.18  no-caption  19  McNemar vs MAD R@1 46/42 p=0.749  R@5 62/37 p=0.0154
+  Fixed   R@10/5/1 (88.8, 64.7, 25.7)  captions/video 10.63  no-caption   2  McNemar vs MAD R@1 23/18 p=0.533  R@5 23/26 p=0.775
+  Median  R@10/5/1 (88.9, 64.1, 26.1)  captions/video 22.28  no-caption   0  McNemar vs MAD R@1 43/42 p=1  R@5 48/45 p=0.836
+[SAVED] results_r2/938/ablation.json

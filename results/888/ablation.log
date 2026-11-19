@@ -1,0 +1,32 @@
+  100/888 histograms (0s)
+  200/888 histograms (0s)
+  300/888 histograms (0s)
+  400/888 histograms (0s)
+  500/888 histograms (0s)
+  600/888 histograms (0s)
+  700/888 histograms (1s)
+  800/888 histograms (1s)
+/home/junia/miniconda3/envs/eveza/lib/python3.10/site-packages/nltk/downloader.py:1076: UserWarning: NLTK will not authorize the non-private download directory '/home/junia/nltk_data': it (or an ancestor) is world- or group-writable, so another local user could plant files there. Choose a private location such as ~/nltk_data.
+  for msg in self.incr_download(info_or_id, download_dir, force):
+[INFO] 888 videos: 888 histograms from variant_counts_cache.npz, 0 loaded from streams
+[VERIFY] cached histograms identical to a full stream reload: 20/20 (max |dT| 0 s, max |d tmin| 0 s)
+VEZA (88.7, 65.4, 26.8)   published windows (88.9, 66.0, 27.3)
+
+== edges rel
+  MAD     R@10/5/1 (88.7, 66.0, 27.3)  captions/video 10.70  no-caption   1  McNemar vs MAD R@1 0/0 p=1  R@5 0/0 p=1
+  Mean    R@10/5/1 (87.3, 63.2, 26.9)  captions/video 6.21  no-caption  17  McNemar vs MAD R@1 44/41 p=0.828  R@5 59/34 p=0.0124
+  Fixed   R@10/5/1 (89.2, 66.2, 26.7)  captions/video 10.74  no-caption   2  McNemar vs MAD R@1 23/18 p=0.533  R@5 21/23 p=0.88
+  Median  R@10/5/1 (89.4, 66.0, 27.5)  captions/video 22.53  no-caption   0  McNemar vs MAD R@1 40/42 p=0.912  R@5 44/44 p=1
+[SANITY] abs-edge MAD windows identical to published for 888/888 videos
+
+== edges abs
+  MAD     R@10/5/1 (88.9, 66.0, 27.3)  captions/video 10.70  no-caption   1  McNemar vs MAD R@1 0/0 p=1  R@5 0/0 p=1
+  Mean    R@10/5/1 (87.4, 63.3, 27.0)  captions/video 6.22  no-caption  16  McNemar vs MAD R@1 44/42 p=0.914  R@5 58/34 p=0.016
+  Fixed   R@10/5/1 (89.2, 66.2, 26.7)  captions/video 10.74  no-caption   2  McNemar vs MAD R@1 23/18 p=0.533  R@5 21/23 p=0.88
+  Median  R@10/5/1 (89.3, 66.0, 27.5)  captions/video 22.53  no-caption   0  McNemar vs MAD R@1 40/42 p=0.912  R@5 44/44 p=1
+OK  MAD     got (88.7, 66.0, 27.3) nocap 1 cpv 10.7   rak_final (88.7, 66.0, 27.3) nocap 1 cpv 10.7
+OK  Mean    got (87.3, 63.2, 26.9) nocap 17 cpv 6.2   rak_final (87.3, 63.2, 26.9) nocap 17 cpv 6.2
+OK  Fixed   got (89.2, 66.2, 26.7) nocap 2 cpv 10.7   rak_final (89.2, 66.2, 26.7) nocap 2 cpv 10.7
+OK  Median  got (89.4, 66.0, 27.5) nocap 0 cpv 22.5   rak_final (89.4, 66.0, 27.5) nocap 0 cpv 22.5
+rak_final.txt REPRODUCED
+[SAVED] results_r2/888/ablation.json

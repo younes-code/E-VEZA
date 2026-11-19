@@ -1,0 +1,125 @@
+{
+  "n_frames": 12,
+  "frames": [
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Arson/Arson025_x264/1621 00:54:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Explosion/Explosion003_x264/361 00:12:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Robbery/Robbery128_x264/5221 02:54:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Burglary/Burglary037_x264/1081 00:36:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Robbery/Robbery066_x264/811 00:27:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Explosion/Explosion046_x264/2161 01:12:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/RoadAccidents/RoadAccidents008_x264/1171 00:39:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Explosion/Explosion046_x264/124021 68:54:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Robbery/Robbery023_x264/181 00:06:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Shoplifting/Shoplifting044_x264/10531 05:51:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Robbery/Robbery042_x264/541 00:18:000.jpg",
+    "/home/junia/Projects/E-VEZA/E-VEZA/data/UCF_Crimes_Frames/Robbery/Robbery011_x264/1081 00:36:000.jpg"
+  ],
+  "models": {
+    "microsoft/git-base-coco": {
+      "exact_matches": 12,
+      "pairs": [
+        {
+          "stored": "a person is throwing a cigarette in the air.",
+          "generated": "a person is throwing a cigarette in the air."
+        },
+        {
+          "stored": "a car driving down a highway next to a billboard.",
+          "generated": "a car driving down a highway next to a billboard."
+        },
+        {
+          "stored": "a photo of a computer screen in a store.",
+          "generated": "a photo of a computer screen in a store."
+        },
+        {
+          "stored": "a man is cleaning a sink in a room.",
+          "generated": "a man is cleaning a sink in a room."
+        },
+        {
+          "stored": "a woman sitting in a chair next to a computer.",
+          "generated": "a woman sitting in a chair next to a computer."
+        },
+        {
+          "stored": "a black and white photo of a parking lot with cars parked in it.",
+          "generated": "a black and white photo of a parking lot with cars parked in it."
+        },
+        {
+          "stored": "a car parked on the side of a street.",
+          "generated": "a car parked on the side of a street."
+        },
+        {
+          "stored": "fire in the street after a car accident",
+          "generated": "fire in the street after a car accident"
+        },
+        {
+          "stored": "two men looking at a display case in a store.",
+          "generated": "two men looking at a display case in a store."
+        },
+        {
+          "stored": "a man standing in front of a computer.",
+          "generated": "a man standing in front of a computer."
+        },
+        {
+          "stored": "two men are standing in front of a computer.",
+          "generated": "two men are standing in front of a computer."
+        },
+        {
+          "stored": "a person standing in a store with a person holding an umbrella.",
+          "generated": "a person standing in a store with a person holding an umbrella."
+        }
+      ]
+    },
+    "microsoft/git-large-coco": {
+      "exact_matches": 0,
+      "pairs": [
+        {
+          "stored": "a person is throwing a cigarette in the air.",
+          "generated": "a car is driving down the street and a car is driving down the street."
+        },
+        {
+          "stored": "a car driving down a highway next to a billboard.",
+          "generated": "a car is driving down a highway with other cars."
+        },
+        {
+          "stored": "a photo of a computer screen in a store.",
+          "generated": "a photo of a store with a woman in the foreground."
+        },
+        {
+          "stored": "a man is cleaning a sink in a room.",
+          "generated": "a man is seen in a dark room."
+        },
+        {
+          "stored": "a woman sitting in a chair next to a computer.",
+          "generated": "a woman is seen behind a cashier in a shop."
+        },
+        {
+          "stored": "a black and white photo of a parking lot with cars parked in it.",
+          "generated": "a black and white photo of a car parked in a parking lot."
+        },
+        {
+          "stored": "a car parked on the side of a street.",
+          "generated": "a car parked in a garage."
+        },
+        {
+          "stored": "fire in the street after a car accident",
+          "generated": "a fire truck is parked in a parking lot."
+        },
+        {
+          "stored": "two men looking at a display case in a store.",
+          "generated": "a couple of men looking at items in a store."
+        },
+        {
+          "stored": "a man standing in front of a computer.",
+          "generated": "a man is standing in front of a computer."
+        },
+        {
+          "stored": "two men are standing in front of a computer.",
+          "generated": "a man is standing in front of a cash register."
+        },
+        {
+          "stored": "a person standing in a store with a person holding an umbrella.",
+          "generated": "a woman is standing in front of a cash register."
+        }
+      ]
+    }
+  }
+}

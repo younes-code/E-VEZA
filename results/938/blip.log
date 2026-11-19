@@ -1,0 +1,26 @@
+/home/junia/miniconda3/envs/eveza/lib/python3.10/site-packages/nltk/downloader.py:1076: UserWarning: NLTK will not authorize the non-private download directory '/home/junia/nltk_data': it (or an ancestor) is world- or group-writable, so another local user could plant files there. Choose a private location such as ~/nltk_data.
+  for msg in self.incr_download(info_or_id, download_dir, force):
+Token indices sequence length is longer than the specified maximum sequence length for this model (815 > 512). Running this sequence through the model will result in indexing errors
+[INFO] eval list from eval938.txt: 938 videos
+
+== mplug (156s)
+ VEZA (88.4, 63.4, 25.5)  E-VEZA (88.3, 64.4, 26.2)   McNemar R@1 p=0.534
+ truncated: VEZA 59.1 %  E-VEZA 12.5 %   median tokens 618 / 184
+ random length-matched (10 seeds) [87.3, 62.4, 25.8] +- [0.9, 0.7, 0.6]
+ no truncation: VEZA (89.6, 63.8, 26.3)  E-VEZA (88.1, 64.3, 26.3)
+ sampling interval {'median': 3.0, 'videos_at_<=1.5s': 0, 'videos_at_>=2.5s': 938}
+
+== blip (136s)
+ VEZA (90.7, 62.9, 24.0)  E-VEZA (90.5, 63.9, 28.8)   McNemar R@1 p=0.000134
+ truncated: VEZA 49.3 %  E-VEZA 11.4 %   median tokens 492 / 151
+ random length-matched (10 seeds) [89.8, 63.1, 27.3] +- [0.6, 0.7, 0.8]
+ no truncation: VEZA (90.7, 63.9, 25.4)  E-VEZA (90.5, 63.6, 29.4)
+ sampling interval {'median': 1.0, 'videos_at_<=1.5s': 832, 'videos_at_>=2.5s': 106}
+
+== git (58s)
+ VEZA (78.8, 48.2, 19.2)  E-VEZA (79.5, 49.9, 17.5)   McNemar R@1 p=0.105
+ truncated: VEZA 8.4 %  E-VEZA 0.2 %   median tokens 130 / 42
+ random length-matched (10 seeds) [79.2, 47.1, 17.1] +- [0.8, 1.0, 0.7]
+ no truncation: VEZA (79.3, 48.4, 19.2)  E-VEZA (79.5, 49.9, 17.5)
+ sampling interval {'median': 3.0, 'videos_at_<=1.5s': 0, 'videos_at_>=2.5s': 938}
+[SAVED] results_r2/938/blip_controls.json
